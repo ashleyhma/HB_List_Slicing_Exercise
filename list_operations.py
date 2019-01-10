@@ -17,7 +17,7 @@ The docstring of each function describes what it should do.
 
 DO NOT USE ANY OF THE BUILT IN LIST METHODS, OR len()!
 """
-
+import webbrowser
 
 def head(input_list):
     """Return the first element of the input list.
@@ -139,7 +139,7 @@ def inner_four_end(input_list):
 
     """
 
-    return []
+    return input_list[-6:-2]
 
 
 def replace_head(input_list):
@@ -153,7 +153,7 @@ def replace_head(input_list):
     True
 
     """
-
+    input_list[0] = 42
     pass
 
 
@@ -168,7 +168,9 @@ def replace_third_and_last(input_list):
     True
 
     """
-
+    input_list[2] = 37
+    input_list[-1] = 37
+   
     pass
 
 
@@ -187,7 +189,7 @@ def replace_middle(input_list):
     True
 
     """
-
+    input_list[2:8] = [42, 37]
     pass
 
 
@@ -202,6 +204,8 @@ def delete_third_and_seventh(input_list):
     True
 
     """
+    del input_list[2]
+    del input_list[-2]
 
     pass
 
@@ -219,7 +223,7 @@ def delete_middle(input_list):
     True
 
     """
-
+    del input_list[2:-2]
     pass
 
 
@@ -237,3 +241,5 @@ if __name__ == "__main__":
     result = doctest.testmod()
     if result.failed == 0:
         print("ALL TESTS PASSED")
+        webbrowser.open('https://www.youtube.com/watch?v=bjxf-eQWKoo') 
+    
