@@ -61,7 +61,10 @@ def custom_append(input_list, value):
 
     """
     # new_list = input_list + [value]
-    input_list = input_list + [value]
+    # input_list = input_list + [value]
+    input_list[custom_len(input_list):] = [value]
+    # new_list = 
+
     # print(new_list)
     # new_list = input_list
     # input_list[-1] = [input_list[0], value]
@@ -85,7 +88,7 @@ def custom_extend(input_list, second_list):
 
     """
 
-    input_list + second_list
+    input_list[custom_len(input_list):] = second_list
 
 
 def custom_insert(input_list, index, value):
@@ -102,8 +105,7 @@ def custom_insert(input_list, index, value):
         True
 
     """
-
-    pass
+    input_list[index:index] = [value]
 
 
 def custom_remove(input_list, value):
@@ -121,9 +123,15 @@ def custom_remove(input_list, value):
         True
 
     """
+    # if value == input_list[0]:
+    counter = 0
+    for item in input_list:
+        if item == value:
+            input_list[counter: counter + 1] = []
+            break
+        counter += 1
 
-    pass
-
+    
 
 def custom_pop(input_list):
     """Remove the last item in the list and returns it.
@@ -238,7 +246,7 @@ def custom_equality(some_list, another_list):
 # Please ask for a code review. Also, give your partner a high-five!
 ##############################################################################
 
-# This is the part were we actually run the doctests.
+#This is the part were we actually run the doctests.
 
 if __name__ == "__main__":
     import doctest
