@@ -30,8 +30,10 @@ def custom_len(input_list):
         8
 
     """
-
-    return 0
+    length = 0 
+    for item in input_list:
+        length += 1 
+    return length
 
 
 # For the next four exercises, you'll need to be clever and think about ways
@@ -58,9 +60,14 @@ def custom_append(input_list, value):
         True
 
     """
-
-    pass
-
+    # new_list = input_list + [value]
+    input_list = input_list + [value]
+    # print(new_list)
+    # new_list = input_list
+    # input_list[-1] = [input_list[0], value]
+    # new_list = input_list + [value]
+    # if new_list == input_list + [value]:
+    #     return None
 
 def custom_extend(input_list, second_list):
     """Append every item in second_list to input_list.
@@ -78,7 +85,7 @@ def custom_extend(input_list, second_list):
 
     """
 
-    pass
+    input_list + second_list
 
 
 def custom_insert(input_list, index, value):
@@ -184,8 +191,8 @@ def custom_reverse(input_list):
         True
 
     """
-
-    pass
+    new_list = input_list[::-1]
+    input_list = new_list 
 
 
 def custom_contains(input_list, value):
